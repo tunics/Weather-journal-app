@@ -44,13 +44,11 @@ function callBack(req, res) {
 }
 
 // Post an entry
-const data = [];
-
 app.get("/allEntries", getData);
 
 function getData(req, res) {
-    res.send(data);
-    console.log(data);
+    res.send(projectData);
+    console.log(projectData);
 }
 
 app.post("/addEntry", addEntry);
@@ -63,6 +61,5 @@ function addEntry(req, res) {
         date: req.body.date,
         feeling: req.body.feelings,
     };
-    data.push(newEntry);
-    // console.log(data);
+    projectData = newEntry;
 }

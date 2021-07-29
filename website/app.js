@@ -66,13 +66,12 @@ const updateUI = async () => {
         // Insert data
         document.getElementById(
             "icon"
-        ).src = `http://openweathermap.org/img/wn/${allData[lastData].icon}@2x.png`;
+        ).src = `http://openweathermap.org/img/wn/${allData.icon}@2x.png`;
         document.getElementById("temp").innerHTML =
-            Math.round(allData[lastData].temp) + "ºC";
-        document.getElementById("city").innerHTML = allData[lastData].city;
-        document.getElementById("date").innerHTML = allData[lastData].date;
-        document.getElementById("content").innerHTML =
-            allData[lastData].feeling;
+            Math.round(allData.temp) + "ºC";
+        document.getElementById("city").innerHTML = allData.city;
+        document.getElementById("date").innerHTML = allData.date;
+        document.getElementById("content").innerHTML = allData.feeling;
     } catch (error) {
         console.log("error", error);
     }
