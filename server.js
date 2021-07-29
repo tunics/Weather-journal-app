@@ -61,7 +61,7 @@ function addEntry(req, res) {
         temp: req.body.temp,
         icon: req.body.icon,
         date: req.body.date,
-        feeling: req.body.feeling,
+        feeling: req.body.feelings,
     };
     data.push(newEntry);
     // console.log(data);

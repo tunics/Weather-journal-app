@@ -1,1 +1,167 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+} /*16px*/
+
+body {
+    font-family: "Andada", serif;
+    font-weight: 400;
+    line-height: 1.5;
+    background-image: url("https://source.unsplash.com/collection/8839095/");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 3rem 0 1.38rem;
+    font-family: "Andada", serif;
+    font-weight: 800;
+    line-height: 1.3;
+    color: white;
+    text-align: center;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 2.488rem;
+}
+
+h2 {
+    font-size: 2.074rem;
+}
+
+h3 {
+    font-size: 1.728rem;
+}
+
+h4 {
+    font-size: 1.44rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
+small,
+.text_small {
+    font-size: 0.833rem;
+}
+
+h3 {
+    font-size: 1.953rem;
+}
+
+small,
+.text_small {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.container {
+    max-width: 400px;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+/* Input data */
+.form {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    border-radius: 0.3rem;
+    background-color: white;
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.15);
+}
+
+input,
+textarea {
+    font-family: "Andada", serif;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    background-color: #f8f1d5;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+#zip.error {
+    border: 1px solid red;
+}
+
+#caption:after {
+    content: "Us zip code only";
+}
+
+#caption.error:after {
+    content: "Please enter a valid Us zip code";
+}
+
+#caption.error {
+    color: red;
+}
+
+button {
+    font-family: "Andada", serif;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 0.3rem;
+    color: white;
+    background-color: #5d95b6;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3e6d88;
+}
+
+/* Entries */
+#entryHolder {
+    background-color: white;
+    border-radius: 0.3rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#entryHolder > h2 {
+    width: 100%;
+    color: black;
+    text-shadow: none;
+}
+
+#icon {
+    margin: 0 auto;
+}
+
+#temp {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #5d95b6;
+}
+
+#city {
+    margin-top: 1rem;
+}

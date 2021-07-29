@@ -5,6 +5,8 @@ const iconURL = "http://openweathermap.org/img/wn/";
 const zipInput = document.getElementById("zip");
 const feelingsInput = document.getElementById("feelings");
 const generateBtn = document.getElementById("generate");
+const entryHolder = document.getElementById("entryHolder");
+const caption = document.getElementById("caption");
 let zip = "";
 let feelings = "";
 
@@ -35,13 +37,12 @@ const postData = async (url = "", data = {}) => {
 
 //Async get zip code weather
 const getZipWeather = async (baseURL, zip, key) => {
-    const res = await fetch(baseURL + zip + "&appid=" + key);
+    const res = await fetch(baseURL + zip + "&appid=" + key + "&units=metric");
 
     try {
         const allData = await res.json();
         return allData;
     } catch (error) {
-        // appropriately handle the error
         console.log("error", error);
     }
 };
@@ -51,7 +52,27 @@ const updateUI = async () => {
     const request = await fetch("/allEntries");
     try {
         const allData = await request.json();
-        document.getElementById("temp").innerHTML = allData[0].city;
+
+        // Display info
+        entryHolder.style.display = "grid";
+
+        // Last insertion
+        lastData = allData.length - 1;
+
+        // Remove error
+        caption.classList.remove("error");
+        zipInput.classList.remove("error");
+
+        // Insert data
+        document.getElementById(
+            "icon"
+        ).src = `http://openweathermap.org/img/wn/${allData[lastData].icon}@2x.png`;
+        document.getElementById("temp").innerHTML =
+            Math.round(allData[lastData].temp) + "ºC";
+        document.getElementById("city").innerHTML = allData[lastData].city;
+        document.getElementById("date").innerHTML = allData[lastData].date;
+        document.getElementById("content").innerHTML =
+            allData[lastData].feeling;
     } catch (error) {
         console.log("error", error);
     }
@@ -70,11 +91,20 @@ function generate(btn) {
                     temp: data.main.temp,
                     icon: data.weather[0].icon,
                     date: newDate,
-                    feeling: feelings,
+                    feelings: feelings,
                 });
             })
-            .then(updateUI);
+            .then(updateUI)
+            .catch((err) => {
+                handleError();
+            });
     });
+}
+
+function handleError() {
+    caption.classList.add("error");
+    zipInput.classList.add("error");
+    zipInput.value = "";
 }
 
 generate(generateBtn);
