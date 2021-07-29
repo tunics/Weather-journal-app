@@ -12,5 +12,7 @@ A web app that uses a Web API from [openweathermap](http://openweathermap.orgcom
    `node server`
 1. Server is running on port 3000
    `http://localhost:3000/`
+   
+*Only works with US zip codes.
 
-## Demo
+
