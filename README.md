@@ -1,7 +1,7 @@
 # Weather Journal App Project
 
 Project created for Udacity Front End Web Developer Nanodegree Program.
-A web app that uses a Web API from [openweathermap](http://openweathermap.orgcom) and user data to dynamically update the UI for a Weather-Journal.
+A web app that uses a Web API from [openweathermap](http://openweathermap.org) and user data to dynamically update the UI for a Weather-Journal.
 
 ## Installing and using
 
