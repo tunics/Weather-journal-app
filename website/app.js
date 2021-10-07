@@ -10,8 +10,6 @@ const caption = document.getElementById("caption");
 let zip = "";
 let feelings = "";
 
-const zipTest = 10009; //TODO: delete later
-
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear();
